@@ -20,6 +20,33 @@
     // → 55
 */
 
+//range function
+const range = (start, end, step = 1) => {
+    let result = [];
+    for(let i = start; i <= end; i += step){
+        result.push(i);
+    }
+    return result;
+};
+
+//testing the range function
+console.log(range(1,10));
+
+//sum function
+function sum(arr){
+    let result = 0;
+    for(number of arr){
+        result += number;
+    }
+    return result;
+}
+
+//testing sum function
+console.log(sum(range(1,10)));
+
+
+
+
 /*
     2. Write a function arrayToList that builds up a list structure like the one shown when given [1, 2, 3] as argument. 
     
@@ -38,6 +65,8 @@
     and nth, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) 
     or undefined when there is no such element.
 */
+
+//TODO
 
 /*
     3. Arrays have a reverse method that changes the array by inverting the order in which its elements appear. 
@@ -58,6 +87,40 @@
     console.log(arrayValue);
     // → [5, 4, 3, 2, 1]
 */
+function reverseArray(arr){ 
+    let reverseArray = [];
+    let length = arr.length;
+    for(let i = length - 1; i >= 0; i--){
+        reverseArray.push(arr[i]);
+    }
+    return reverseArray;
+}
+
+//testing reverse array Function
+console.log(reverseArray([1,2,3,4,5]));
+
+
+
+
+function reverseArrayInPlace(arr){
+    let length = arr.length; 
+    for(let i = 0; i < length /2; i++){
+        //swapping the elements
+        let temp = arr[i] 
+        arr[i] = arr[length - i -1];
+        arr[length - i -1] = temp;
+    }
+}
+
+///testing reverse array inplace 
+const array = [11,12,13,14,15];
+reverseArrayInPlace(array);
+console.log(array);
+
+//For sure, inplace array reverse method is faster. But, it works on principle of side effects.
+
+
+
 
 /*
     4. Write a function deepEqual that takes two values and returns true only if they are the same value or are objects with the same properties, 
